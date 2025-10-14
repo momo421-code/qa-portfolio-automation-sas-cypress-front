@@ -1,0 +1,579 @@
+[
+  {
+    "data_alias": "PS 3 Lieux Consultation",
+    "description": "3 lieux de consultation + créneaux toute la semaine sur 2 lieux, créneaux 5 jours sur un lieu, 1 ou 2 ou 3 types de consultation, 1 lieu sans spécialité",
+    "practitioner": {
+      "lastname": "Gorioux",
+      "firstnames": [
+        "Pierre-Henri"
+      ],
+      "national_id": "810100973410"
+    },
+    "locations": [
+      {
+        "id": 1,
+        "line": "4bis Quai Sainte-Croix",
+        "postal_code": "33800",
+        "city": "Bordeaux",
+        "phone": [
+          "+33101010101"
+        ],
+        "structure_id": "",
+        "slot_configuration": {
+          "days_of_week": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "meta_security": [
+            "PUBLIC"
+          ],
+          "appointment_type": [
+            "ROUTINE"
+          ],
+          "service_type": [
+            "AMB"
+          ],
+          "specialties": [
+            "SM54",
+            "SM42"
+          ],
+          "duration": "15",
+          "comment": "https://editeur1/gorioux/saintecroix",
+          "start": "06:00:00",
+          "end": "22:00:00"
+        }
+      },
+      {
+        "line": "7 Route Saint Saturnin",
+        "postal_code": "33340",
+        "city": " Bégadan",
+        "phone": [],
+        "structure_id": "iddestructure",
+        "slot_configuration": {
+          "days_of_week": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "meta_security": [
+            "PUBLIC"
+          ],
+          "appointment_type": [
+            "ROUTINE"
+          ],
+          "service_type": [
+            "AMB",
+            "HH"
+          ],
+          "specialties": [
+          ],
+          "duration": "19",
+          "comment": "https://editeur1/gorioux/saintsaturnin",
+          "start": "20:01:00",
+          "end": "21:00:00"
+        }
+      },
+      {
+        "line": "21 Rue Georges Lesieur",
+        "postal_code": "33000",
+        "city": "Bordeaux",
+        "phone": [
+          "+33606060606",
+          "+33707070707"
+        ],
+        "structure_id": "",
+        "slot_configuration": {
+          "days_of_week": [
+            "mon",
+            "tue",
+            "thu",
+            "fri",
+            "sun"
+          ],
+          "meta_security": [
+            "PUBLIC"
+          ],
+          "appointment_type": [
+            "ROUTINE"
+          ],
+          "service_type": [
+            "AMB",
+            "HH",
+            "VR"
+          ],
+          "specialties": [
+            "SM54"
+          ],
+          "duration": "19",
+          "comment": "https://editeur1/gorioux/ruelesieur",
+          "start": "20:01:00",
+          "end": "21:00:00"
+        }
+      }
+    ]
+  },
+  {
+    "description": "Use case to manage editor slot display (enable or disable sas participation)",
+    "practitioner": {
+      "lastname": "Bovay",
+      "firstnames": [
+        "Florence"
+      ],
+      "national_id": "810100263887"
+    },
+    "locations": [
+      {
+        "line": "4 Rue du 19 Mars 1962",
+        "postal_code": "29000",
+        "city": "Quimper",
+        "phone": [
+          "+33298903644"
+        ],
+        "structure_id": "",
+        "slot_configuration": {
+          "days_of_week": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "meta_security": [
+            "PUBLIC"
+          ],
+          "appointment_type": [
+            "ROUTINE"
+          ],
+          "service_type": [
+            "VR"
+          ],
+          "specialties": [
+            "SM54"
+          ],
+          "duration": "60",
+          "comment": "https://editeur1",
+          "start": "06:00:00",
+          "end": "22:00:00"
+        }
+      }
+    ]
+  },
+  {
+    "description": "Second use case to manage editor slot display (enable or disable sas participation)",
+    "practitioner": {
+      "lastname": "Austruy",
+      "firstnames": [
+        "Sabrina"
+      ],
+      "national_id": "810100762557"
+    },
+    "locations": [
+      {
+        "line": "151 Avenue Aristide Briand",
+        "postal_code": "82000",
+        "city": "Montauban",
+        "phone": [
+          "+33637584110"
+        ],
+        "structure_id": "",
+        "slot_configuration": {
+          "days_of_week": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "meta_security": [
+            "PUBLIC"
+          ],
+          "appointment_type": [
+            "ROUTINE"
+          ],
+          "service_type": [
+            "VR"
+          ],
+          "specialties": [
+            "SM54"
+          ],
+          "duration": "60",
+          "comment": "https://editeur1",
+          "start": "06:00:00",
+          "end": "22:00:00"
+        }
+      }
+    ]
+  },
+  {
+    "data_alias": "Effecteur affichage créneau éditeur",
+    "description": "PS interfacé dans 2 solutions éditeurs",
+    "practitioner": {
+      "lastname": "De Paredes",
+      "firstnames": [
+        "Claire"
+      ],
+      "national_id": "810002769932"
+    },
+    "locations": [
+      {
+        "id": 1,
+        "line": "74 Rue Georges Bonnac",
+        "postal_code": "33000",
+        "city": "Bordeaux",
+        "phone": [
+          "+33556964950"
+        ],
+        "structure_id": "",
+        "slot_configuration": {
+          "days_of_week": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "meta_security": [
+            "PUBLIC"
+          ],
+          "appointment_type": [
+            "ROUTINE"
+          ],
+          "service_type": [
+            "HH"
+          ],
+          "specialties": [
+            "SM54"
+          ],
+          "duration": "60",
+          "comment": "https://editeur1",
+          "start": "06:00:00",
+          "end": "22:00:00"
+        }
+      },
+      {
+        "line": "45 Cours du Maréchal Gallieni",
+        "postal_code": "33000",
+        "city": "Bordeaux",
+        "phone": [
+          "+33556339550"
+        ],
+        "structure_id": "",
+        "slot_configuration": {
+          "days_of_week": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "meta_security": [
+            "PUBLIC"
+          ],
+          "appointment_type": [
+            "ROUTINE"
+          ],
+          "service_type": [
+            "HH"
+          ],
+          "specialties": [
+            "SM54"
+          ],
+          "duration": "60",
+          "comment": "https://editeur2",
+          "start": "06:00:00",
+          "end": "22:00:00"
+        }
+      }
+    ]
+  },
+  {
+    "description": "ID structure correspondant",
+    "practitioner": {
+      "lastname": "Roseau",
+      "firstnames": [
+        "Serge"
+      ],
+      "national_id": "810003244075"
+    },
+    "locations": [
+      {
+        "line": "1047 Avenue Leonard de Vinci",
+        "postal_code": "34970",
+        "city": "Lattes",
+        "phone": [
+          "+33467993993"
+        ],
+        "structure_id": "1000181987",
+        "slot_configuration": {
+          "days_of_week": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri",
+            "sat",
+            "sun"
+          ],
+          "meta_security": [
+            "PUBLIC"
+          ],
+          "appointment_type": [
+            "ROUTINE"
+          ],
+          "service_type": [
+            "AMB"
+          ],
+          "specialties": [
+            "SM54"
+          ],
+          "duration": "60",
+          "comment": "https://editeur1",
+          "start": "06:00:00",
+          "end": "22:00:00"
+        }
+      }
+    ]
+  },
+  {
+    "description": "ID structure non correspondant, lieu d'exercice editeur dans un autre département (donc non affiché)",
+    "practitioner": {
+      "lastname": "Duguy",
+      "firstnames": [
+        "Chloe"
+      ],
+      "national_id": "810100566172"
+    },
+    "locations": [
+      {
+        "line": "26 Avenue des Thébaudières",
+        "postal_code": "44800",
+        "city": "Saint-Herblain",
+        "phone": [
+          "+33240635810"
+        ],
+        "structure_id": "1912666600",
+        "slot_configuration": {
+          "days_of_week": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "meta_security": [
+            "PUBLIC"
+          ],
+          "appointment_type": [
+            "ROUTINE"
+          ],
+          "service_type": [
+            "HH"
+          ],
+          "specialties": [
+            "SM54"
+          ],
+          "duration": "15",
+          "comment": "https://editeur1",
+          "start": "08:00:00",
+          "end": "18:00:00"
+        }
+      }
+    ]
+  },
+  {
+    "description": "ID structure non correspondant et coordonnées GPS de l'adresse positionnées à Rennes",
+    "practitioner": {
+      "lastname": "Guyard",
+      "firstnames": [
+        "Pauline"
+      ],
+      "national_id": "810100805455"
+    },
+    "locations": [
+      {
+        "line": "2 Rue Robert D'arbrissel",
+        "postal_code": "44800",
+        "city": "Saint-Herblain",
+        "phone": [
+          "+33299023862"
+        ],
+        "structure_id": "1911850925",
+        "slot_configuration": {
+          "days_of_week": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "meta_security": [
+            "PUBLIC"
+          ],
+          "appointment_type": [
+            "ROUTINE"
+          ],
+          "service_type": [
+            "HH"
+          ],
+          "specialties": [
+            "SM54"
+          ],
+          "duration": "60",
+          "comment": "https://editeur1",
+          "start": "08:00:00",
+          "end": "18:00:00"
+        }
+      }
+    ]
+  },
+  {
+    "description": "ID structure non renseigné mais coordonnées GPS correspondantes ; absent de Drupal en RUI, INT donc non affiché",
+    "practitioner": {
+      "lastname": "Bouchereau",
+      "firstnames": [
+        "Quentin"
+      ],
+      "national_id": "810101634805"
+    },
+    "locations": [
+      {
+        "postal_code": "14000",
+        "line": "28 bis Rue de Maltot",
+        "city": "Caen",
+        "phone": [],
+        "structure_id": "",
+        "slot_configuration": {
+          "days_of_week": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "meta_security": [
+            "PUBLIC"
+          ],
+          "appointment_type": [
+            "ROUTINE"
+          ],
+          "service_type": [
+            "HH"
+          ],
+          "specialties": [
+            "SM54"
+          ],
+          "duration": "60",
+          "comment": "https://editeur1",
+          "start": "08:00:00",
+          "end": "18:00:00"
+        }
+      }
+    ]
+  },
+  {
+    "description": "ID structure non renseignée et lieu d'exercice différent du SAS avec un autre numéro de téléphone",
+    "practitioner": {
+      "lastname": "Moings",
+      "firstnames": [
+        "Didier"
+      ],
+      "national_id": "810001692531"
+    },
+    "locations": [
+      {
+        "line": "1 Rue du Moulinet",
+        "postal_code": "10150",
+        "city": "Pont-Sainte-Marie",
+        "phone": [
+          "+33101010101"
+        ],
+        "structure_id": "",
+        "slot_configuration": {
+          "days_of_week": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "meta_security": [
+            "PUBLIC"
+          ],
+          "appointment_type": [
+            "ROUTINE"
+          ],
+          "service_type": [
+            "HH"
+          ],
+          "specialties": [
+            "SM54"
+          ],
+          "duration": "60",
+          "comment": "https://editeur1",
+          "start": "08:00:00",
+          "end": "18:00:00"
+        }
+      }
+    ]
+  },
+  {
+    "description": "adresse et nom en majuscules, aucun service type, horaire avec des minutes et des secondes, plusieurs spécialités",
+    "practitioner": {
+      "lastname": "KARAM",
+      "firstnames": [
+        "Thérèse"
+      ],
+      "national_id": "810001442358"
+    },
+    "locations": [
+      {
+        "line": " 7 RUE GAMBETTA",
+        "postal_code": "78420",
+        "city": "Carrières-sur-Seine",
+        "phone": [
+          "+33404040404",
+          "+33505050505"
+        ],
+        "structure_id": "",
+        "slot_configuration": {
+          "days_of_week": [
+            "mon",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "meta_security": [
+            "PUBLIC"
+          ],
+          "appointment_type": [
+            "ROUTINE"
+          ],
+          "service_type": [],
+          "specialties": [
+            "SM40",
+            "SM57",
+            "SM05",
+            "SM06"
+          ],
+          "duration": "42",
+          "comment": "https://editeur1",
+          "start": "12:12:12",
+          "end": "17:58:58"
+        }
+      }
+    ]
+  }
+]

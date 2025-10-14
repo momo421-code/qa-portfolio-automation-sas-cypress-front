@@ -1,0 +1,1791 @@
+[
+  {
+    "userAlias": "Régulateur OSNP",
+    "login": "qa.servicesas+regul-connexion@gmail.com",
+    "loginType": "PSC",
+    "roles": "Régulateur OSNP",
+    "firstName": "Régulateur-Connexion",
+    "lastName": "TNR",
+    "territories": [
+      "SAS-69 Rhône"
+    ]
+  },
+  {
+    "userAlias": "Régulateur Test auto",
+    "login": "regulateurmohamed@mail.com",
+    "loginType": "PSC",
+    "roles": "Régulateur OSNP",
+    "firstName": "Régulateur-Connexion",
+    "lastName": "TNR",
+    "territories": [
+      "SAS-69 Rhône"
+    ]
+  },
+  {
+    "userAlias": "IOA",
+    "login": "qa.servicesas+ioa-connexion@gmail.com",
+    "loginType": "Drupal",
+    "roles": "IOA",
+    "firstName": "IOA-Connexion",
+    "lastName": "TNR",
+    "territories": [
+      "SAS-75 Paris"
+    ]
+  },
+  {
+    "userAlias": "Effecteur Avec Disponibilités",
+    "login": "qa.servicesas+effect-avec-dispo@gmail.com",
+    "loginType": "PSC",
+    "roles": "Effecteur",
+    "rpps": "10003125647",
+    "firstName": "Celine",
+    "lastName": "Humbert Gimeno",
+    "job": "Médecin généraliste",
+    "sasParticipation": {
+      "type": "à titre individuel",
+      "hasEditor": false
+    },
+    "locations": [
+      {
+        "address": {
+          "street": "10 bis Rue Berty Albrecht",
+          "postalCode": 69008,
+          "city": "Lyon"
+        },
+        "type": "Lieu d'exercice",
+        "id": 1,
+        "availabilities": [
+          {
+            "day": "J+1",
+            "startTime": "00h00",
+            "endTime": "06h00",
+            "type": "Plage",
+            "patientAmount": "6",
+            "consultationModalities": "Téléconsultation",
+            "recurrence": [
+              "Lundi",
+              "Mardi",
+              "Mercredi",
+              "Jeudi",
+              "Vendredi",
+              "Samedi",
+              "Dimanche"
+            ]
+          },
+          {
+            "day": "J+1",
+            "startTime": "06h00",
+            "endTime": "12h00",
+            "type": "Plage",
+            "patientAmount": "6",
+            "consultationModalities": "Téléconsultation",
+            "recurrence": [
+              "Lundi",
+              "Mardi",
+              "Mercredi",
+              "Jeudi",
+              "Vendredi",
+              "Samedi",
+              "Dimanche"
+            ]
+          },
+          {
+            "day": "J+1",
+            "startTime": "12h00",
+            "endTime": "18h00",
+            "type": "Plage",
+            "patientAmount": "6",
+            "consultationModalities": "Téléconsultation",
+            "recurrence": [
+              "Lundi",
+              "Mardi",
+              "Mercredi",
+              "Jeudi",
+              "Vendredi",
+              "Samedi",
+              "Dimanche"
+            ]
+          },
+          {
+            "day": "J+1",
+            "startTime": "18h00",
+            "endTime": "23h59",
+            "type": "Plage",
+            "patientAmount": "6",
+            "consultationModalities": "Téléconsultation",
+            "recurrence": [
+              "Lundi",
+              "Mardi",
+              "Mercredi",
+              "Jeudi",
+              "Vendredi",
+              "Samedi",
+              "Dimanche"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "userAlias": "Effecteur Dispo SAS",
+    "login": "qa.servicesas+effect-dispo-sas@gmail.com",
+    "loginType": "PSC",
+    "roles": "Effecteur",
+    "rpps": "10003342523",
+    "firstName": "Gilbert",
+    "lastName": "Sasportes",
+    "job": "Cardiologue",
+    "sasParticipation": {
+      "type": "à titre individuel",
+      "hasEditor": false
+    },
+    "locations": [
+      {
+        "address": {
+          "street": "4 Boulevard Perier",
+          "postalCode": 13008,
+          "city": "Marseille"
+        },
+        "type": "Lieu d'exercice",
+        "id": 1,
+        "availabilities": [
+          {
+            "day": "J+1",
+            "startTime": "22h00",
+            "endTime": "22h15",
+            "type": "Créneau",
+            "consultationModalities": "Téléconsultation",
+            "recurrence": [
+              "Lundi",
+              "Mardi",
+              "Mercredi",
+              "Jeudi",
+              "Vendredi",
+              "Samedi",
+              "Dimanche"
+            ]
+          }
+        ]
+      },
+      {
+        "address": {
+          "street": "6 Rue Desiree Clary",
+          "postalCode": 13003,
+          "city": "Marseille"
+        },
+        "type": "Lieu d'exercice",
+        "id": 2,
+        "availabilities": [
+          {
+            "day": "J+1",
+            "startTime": "22h00",
+            "endTime": "22h15",
+            "type": "Créneau",
+            "consultationModalities": "Téléconsultation",
+            "recurrence": [
+              "Lundi",
+              "Mardi",
+              "Mercredi",
+              "Jeudi",
+              "Vendredi",
+              "Samedi",
+              "Dimanche"
+            ]
+          }
+        ]
+      },
+      {
+        "address": {
+          "street": "43 Avenue Robert Schuman",
+          "postalCode": 13002,
+          "city": "Marseille"
+        },
+        "type": "Lieu d'exercice",
+        "id": 3,
+        "availabilities": [
+          {
+            "day": "J+1",
+            "startTime": "22h00",
+            "endTime": "22h15",
+            "type": "Créneau",
+            "consultationModalities": "Téléconsultation",
+            "recurrence": [
+              "Lundi",
+              "Mardi",
+              "Mercredi",
+              "Jeudi",
+              "Vendredi",
+              "Samedi",
+              "Dimanche"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "userAlias": "Effecteur Indisponibilité",
+    "login": "qa.servicesas+effect-indisponibilites@gmail.com",
+    "loginType": "PSC",
+    "roles": "Effecteur",
+    "rpps": "10001120350",
+    "firstName": "Pierre-Yves",
+    "lastName": "Menegoz",
+    "job": "Médecin généraliste",
+    "sasParticipation": {
+      "type": "à titre individuel",
+      "hasEditor": false
+    },
+    "locations": [
+      {
+        "address": {
+          "street": "17 Avenue Henri Varagnat",
+          "postalCode": 93140,
+          "city": "Bondy"
+        },
+        "type": "Lieu d'exercice",
+        "id": 1,
+        "availabilities": [
+          {
+            "day": "J+1",
+            "startTime": "22h00",
+            "endTime": "22h15",
+            "type": "Créneau",
+            "consultationModalities": "Téléconsultation",
+            "recurrence": [
+              "Lundi",
+              "Mardi",
+              "Mercredi",
+              "Jeudi",
+              "Vendredi",
+              "Samedi",
+              "Dimanche"
+            ]
+          }
+        ]
+      },
+      {
+        "address": {
+          "street": "17 Avenue Henri Barbusse",
+          "postalCode": 93700,
+          "city": "Drancy"
+        },
+        "type": "Lieu d'exercice",
+        "id": 2,
+        "availabilities": [
+          {
+            "day": "J+1",
+            "startTime": "22h00",
+            "endTime": "22h15",
+            "type": "Créneau",
+            "consultationModalities": "Téléconsultation",
+            "recurrence": [
+              "Lundi",
+              "Mardi",
+              "Mercredi",
+              "Jeudi",
+              "Vendredi",
+              "Samedi",
+              "Dimanche"
+            ]
+          }
+        ]
+      },
+      {
+        "address": {
+          "street": "12 Rue du Général Julien",
+          "postalCode": 93800,
+          "city": "Épinay-sur-Seine"
+        },
+        "type": "Lieu d'exercice",
+        "id": 3,
+        "availabilities": [
+          {
+            "day": "J+1",
+            "startTime": "22h00",
+            "endTime": "22h15",
+            "type": "Créneau",
+            "consultationModalities": "Téléconsultation",
+            "recurrence": [
+              "Lundi",
+              "Mardi",
+              "Mercredi",
+              "Jeudi",
+              "Vendredi",
+              "Samedi",
+              "Dimanche"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "userAlias": "Effecteur Indisponibilité Programmée",
+    "login": "qa.servicesas+effect-indispo-program@gmail.com",
+    "loginType": "PSC",
+    "roles": "Effecteur",
+    "rpps": "10100487247",
+    "firstName": "Hassan",
+    "lastName": "Hage",
+    "job": "Cardiologue",
+    "sasParticipation": {
+      "type": "à titre individuel",
+      "hasEditor": false
+    },
+    "locations": [
+      {
+        "address": {
+          "street": "96 Avenue des Caillols",
+          "postalCode": 13012,
+          "city": "Marseille"
+        },
+        "type": "Lieu d'exercice",
+        "id": 1,
+        "availabilities": [
+          {
+            "day": "J+1",
+            "startTime": "22h00",
+            "endTime": "22h15",
+            "type": "Créneau",
+            "consultationModalities": "Téléconsultation",
+            "recurrence": [
+              "Lundi",
+              "Mardi",
+              "Mercredi",
+              "Jeudi",
+              "Vendredi",
+              "Samedi",
+              "Dimanche"
+            ]
+          }
+        ]
+      },
+      {
+        "address": {
+          "street": "Impasse du Lido",
+          "postalCode": 13012,
+          "city": "Marseille"
+        },
+        "type": "Lieu d'exercice",
+        "id": 2,
+        "availabilities": [
+          {
+            "day": "J+1",
+            "startTime": "22h00",
+            "endTime": "22h15",
+            "type": "Créneau",
+            "consultationModalities": "Téléconsultation",
+            "recurrence": [
+              "Lundi",
+              "Mardi",
+              "Mercredi",
+              "Jeudi",
+              "Vendredi",
+              "Samedi",
+              "Dimanche"
+            ]
+          }
+        ]
+      },
+      {
+        "address": {
+          "street": "Rue du Rhone",
+          "postalCode": 13008,
+          "city": "Marseille"
+        },
+        "type": "Lieu d'exercice",
+        "id": 3,
+        "availabilities": [
+          {
+            "day": "J+1",
+            "startTime": "22h00",
+            "endTime": "22h15",
+            "type": "Créneau",
+            "consultationModalities": "Téléconsultation",
+            "recurrence": [
+              "Lundi",
+              "Mardi",
+              "Mercredi",
+              "Jeudi",
+              "Vendredi",
+              "Samedi",
+              "Dimanche"
+            ]
+          }
+        ]
+      },
+      {
+        "address": {
+          "street": "Boulevard du Redon",
+          "postalCode": 13009,
+          "city": "Marseille"
+        },
+        "type": "Lieu d'exercice",
+        "id": 4,
+        "availabilities": [
+          {
+            "day": "J+1",
+            "startTime": "22h00",
+            "endTime": "22h15",
+            "type": "Créneau",
+            "consultationModalities": "Téléconsultation",
+            "recurrence": [
+              "Lundi",
+              "Mardi",
+              "Mercredi",
+              "Jeudi",
+              "Vendredi",
+              "Samedi",
+              "Dimanche"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "userAlias": "Effecteur Individuel",
+    "login": "qa.servicesas+effecteur-individuel@gmail.com",
+    "loginType": "PSC",
+    "roles": "Effecteur",
+    "rpps": "10001233500",
+    "firstName": "Nathalie",
+    "lastName": "Coulon",
+    "sasParticipation": {
+      "type": "à titre individuel",
+      "hasEditor": false
+    },
+    "locations": [
+      {
+        "address": {
+          "street": "5 Rue du Capitaine Morinet",
+          "postalCode": 94270,
+          "city": "Le Kremlin-Bicêtre"
+        },
+        "type": "Lieu d'exercice",
+        "id": 1,
+        "availabilities": [
+          {
+            "day": "J+1",
+            "startTime": "22h00",
+            "endTime": "22h15",
+            "type": "Créneau",
+            "consultationModalities": "Téléconsultation",
+            "recurrence": [
+              "Lundi",
+              "Mardi",
+              "Mercredi",
+              "Jeudi",
+              "Vendredi",
+              "Samedi",
+              "Dimanche"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "userAlias": "Effecteur Dispos NonSAS pediatre1",
+    "__comment__": "PS interfacé en PreProd mais il faut au moins un créneau pour qu'il apparaisse dans les résultats. Voir comment on gère les tests",
+    "job": "Pédiatre",
+    "specialties": [
+      "Pédiatrie"
+    ],
+    "rpps": 810100413763,
+    "roles": [
+      "Effecteur"
+    ],
+    "firstName": "Azadeh",
+    "lastName": "Djavidi",
+    "login": "qa.servicesas+effecteur-dispo-nonsas-pediatre1@gmail.com",
+    "loginType": "PSC",
+    "sasParticipation": {
+      "type": "NONE"
+    },
+    "locations": [
+      {
+        "type": "Lieu d'exercice",
+        "id": 1,
+        "address": {
+          "street": "11 Rue Henri Michaux",
+          "postalCode": "75013",
+          "city": "Paris"
+        },
+        "availabilities": [
+          {
+            "source": "SAS",
+            "day": "J+2",
+            "startTime": "17h30",
+            "endTime": "19h30",
+            "type": "Créneau",
+            "consultationModalities": "Téléconsultation"
+          }
+        ]
+      },
+      {
+        "type": "Lieu d'exercice",
+        "id": 2,
+        "address": {
+          "street": "53 Rue Haxo",
+          "postalCode": "75020",
+          "city": "Paris"
+        }
+      }
+    ]
+  },
+  {
+    "userAlias": "Effecteur Dispos NonSAS pediatre2",
+    "firstName": "Florence",
+    "lastName": "Lageix",
+    "login": "qa.servicesas+effecteur-dispo-nonsas-pediatre2@gmail.com",
+    "rpps": 810100809317,
+    "__comment__": "PS interfacé en PreProd mais il faut au moins un créneau pour qu'il apparaisse dans les résultats",
+    "job": "Pédiatre",
+    "specialties": [
+      "Pédiatrie",
+      "Allergologie"
+    ],
+    "roles": [
+      "Effecteur"
+    ],
+    "sasParticipation": {
+      "type": "NONE"
+    },
+    "locations": [
+      {
+        "type": "Lieu d'exercice",
+        "id": 1,
+        "address": {
+          "street": "6 Rue de Jarente",
+          "postalCode": 75004,
+          "city": "Paris"
+        },
+        "availabilities": [
+          {
+            "source": "SAS",
+            "day": "J+2",
+            "startTime": "19h30",
+            "endTime": "22h30",
+            "type": "Créneau",
+            "consultationModalities": "Téléconsultation"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "userAlias": "Effecteur Médecine Générale Gériatrie",
+    "firstName": "Rodolphe",
+    "lastName": "Garnier",
+    "login": "qa.servicesas+effecteur-mg-geriatrie@gmail.com",
+    "rpps": 810003461026,
+    "__comment__": "test filtre de recherche suggérée - plusieurs spécialités pour PS participant au SAS",
+    "job": "Médecin généraliste",
+    "specialties": [
+      "Médecine générale",
+      "Gériatrie"
+    ],
+    "roles": [
+      "Effecteur"
+    ],
+    "sasParticipation": {
+      "type": "à titre individuel"
+    },
+    "locations": [
+      {
+        "type": "Lieu d'exercice",
+        "id": 1,
+        "address": {
+          "street": "114 Boulevard des Bourroches",
+          "postalCode": 21000,
+          "city": "Dijon"
+        },
+        "availabilities": [
+          {
+            "source": "SAS",
+            "day": "J",
+            "startTime": "23h45",
+            "endTime": "23h59",
+            "type": "Créneau",
+            "recurrence": [
+              "Lundi",
+              "Mardi",
+              "Mercredi",
+              "Jeudi",
+              "Vendredi",
+              "Samedi",
+              "Dimanche"
+            ],
+            "consultationModalities": "Téléconsultation"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "userAlias": "Effecteur conventionné Secteur 2",
+    "login": "qa.servicesas+effecteur-secteur2.psc@gmail.com",
+    "loginType": "PSC",
+    "roles": "Effecteur",
+    "rpps": "10100743318",
+    "firstName": "Victor",
+    "lastName": "Layet",
+    "locations": [
+      {
+        "type": "Lieu d'exercice",
+        "id": 1,
+        "address": {
+          "street": "73 Rue du 4 Août 1789",
+          "postalCode": 69100,
+          "city": "Villeurbanne"
+        },
+        "availabilities": [
+          {
+            "day": "J+1",
+            "startTime": "16h00",
+            "endTime": "20h00",
+            "type": "Plage",
+            "patientAmount": 3,
+            "consultationModalities": "Consultation en cabinet",
+            "recurrence": [
+              "Lundi",
+              "Mardi",
+              "Jeudi",
+              "Vendredi",
+              "Samedi"
+            ]
+          }
+        ]
+      }
+    ],
+    "sasParticipation": {
+      "type": "à titre individuel"
+    }
+  },
+  {
+    "userAlias": "Effecteur CPTS",
+    "login": "qa.servicesas+effecteur-cpts@gmail.com",
+    "loginType": "PSC",
+    "roles": "Effecteur",
+    "rpps": "10102712428",
+    "firstName": "Tiphaine",
+    "lastName": "Leveque",
+    "profession": "Infirmier",
+    "sasParticipation": {
+      "type": "via ma CPTS",
+      "name": "Cpts ouest allier",
+      "linkedLocations": [
+        1
+      ]
+    },
+    "locations": [
+      {
+        "type": "Lieu d'exercice",
+        "id": "1",
+        "address": {
+          "street": "3 Rue des Forges",
+          "postalCode": "03100",
+          "city": "Montluçon"
+        },
+        "availabilities": [
+          {
+            "day": "J+1",
+            "startTime": "20h00",
+            "endTime": "20h30",
+            "type": "Créneau",
+            "consultationModalities": "Téléconsultation",
+            "recurrence": [
+              "Lundi",
+              "Mardi",
+              "Mercredi",
+              "Jeudi",
+              "Vendredi",
+              "Samedi",
+              "Dimanche"
+            ]
+          },
+          {
+            "day": "J",
+            "startTime": "18h30",
+            "endTime": "18h45",
+            "type": "Plage",
+            "consultationModalities": "Téléconsultation",
+            "recurrence": [
+              "Lundi",
+              "Mardi",
+              "Mercredi",
+              "Jeudi",
+              "Vendredi",
+              "Samedi",
+              "Dimanche"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "userAlias": "Effecteur cluster CPTS",
+    "login": "qa.servicesas+effecteur-cluster-cpts@gmail.com",
+    "loginType": "PSC",
+    "roles": "Effecteur",
+    "rpps": "10100187961",
+    "firstName": "Celine",
+    "lastName": "Chanson",
+    "profession": "Médecin généraliste",
+    "sasParticipation": {
+      "type": "via ma CPTS",
+      "name": "Cpts nord 74",
+      "linkedLocations": [
+        1
+      ]
+    },
+    "locations": [
+      {
+        "type": "Lieu d'exercice",
+        "id": "1",
+        "address": {
+          "street": "253 Rte de Thonon",
+          "postalCode": "74380",
+          "city": "Cranves-Sales"
+        }
+      }
+    ]
+  },
+  {
+    "userAlias": "Effecteur cluster CPTS interfacé",
+    "login": "qa.servicesas+effecteur-cluster-cpts-interface@gmail.com",
+    "loginType": "PSC",
+    "roles": "Effecteur",
+    "rpps": "10100973410",
+    "firstName": "Pierre-Henri",
+    "lastName": "Gorioux",
+    "profession": "Médecin généraliste",
+    "sasParticipation": {
+      "type": "via ma CPTS",
+      "name": "Cpts nord 74",
+      "linkedLocations": [
+        1,
+        2,
+        3
+      ]
+    },
+    "locations": [
+      {
+        "type": "Lieu d'exercice",
+        "id": "1",
+        "address": {
+          "street": "21 Rue Georges Lesieur",
+          "postalCode": "33300",
+          "city": "Bordeaux"
+        }
+      },
+      {
+        "type": "Lieu d'exercice",
+        "id": "2",
+        "address": {
+          "street": "7 Route de Saint-Saturnin",
+          "postalCode": "33340",
+          "city": "Bégadan"
+        }
+      },
+      {
+        "type": "Lieu d'exercice",
+        "id": "3",
+        "address": {
+          "street": "4 bis Quai Sainte-Croix",
+          "postalCode": "33800",
+          "city": "Bordeaux"
+        }
+      }
+    ]
+  },
+  {
+    "userAlias": "Effecteur créneau éditeur",
+    "login": "qa.servicesas+effect-creneau-editeur@gmail.com",
+    "loginType": "PSC",
+    "roles": "Effecteur",
+    "rpps": "10100263887",
+    "firstName": "Florence",
+    "lastName": "Bovay",
+    "profession": "Médecin généraliste",
+    "sasParticipation": {
+      "participation": "NONE",
+      "hasEditor": true
+    },
+    "locations": [
+      {
+        "address": {
+          "street": "4 Rue du 19 Mars 1962",
+          "postalCode": "29000",
+          "city": "Quimper"
+        },
+        "type": "Lieu d'exercice",
+        "id": 1
+      }
+    ]
+  },
+  {
+    "userAlias": "Effecteur affichage créneau éditeur",
+    "login": "qa.servicesas+effect-affich-creneau-editeur@gmail.com",
+    "loginType": "PSC",
+    "roles": "Effecteur",
+    "rpps": "10002769932",
+    "firstName": "Claire",
+    "lastName": "De Paredes",
+    "profession": "Médecin généraliste",
+    "locations": [
+      {
+        "type": "Lieu d'exercice",
+        "id": 1,
+        "address": {
+          "street": "74 Rue Georges Bonnac",
+          "postalCode": "33000",
+          "city": "Bordeaux"
+        }
+      },
+      {
+        "type": "Lieu d'exercice",
+        "id": 2,
+        "address": {
+          "street": "45 Cours du Maréchal Gallieni",
+          "postalCode": "33000",
+          "city": "Bordeaux"
+        }
+      }
+    ]
+  },
+  {
+    "userAlias": "Effecteur Paramètres SAS",
+    "login": "qa.servicesas+effecteur-parametres-sas@gmail.com",
+    "loginType": "PSC",
+    "roles": "Effecteur",
+    "rpps": "10102001129",
+    "firstName": "Jean",
+    "lastName": "Chevalier",
+    "sasParticipation": {
+      "participation": "NONE"
+    },
+    "editorTimeSlotDisplay": true,
+    "locations": [
+      {
+        "type": "Lieu d'exercice",
+        "id": "1",
+        "address": {
+          "street": "96 Avenue Jean Paul Marat",
+          "postalCode": 13500,
+          "city": "Martigues"
+        },
+        "availabilities": [
+          {
+            "day": "J+1",
+            "startTime": "22h00",
+            "endTime": "22h15",
+            "type": "Créneau",
+            "consultationModalities": "Téléconsultation",
+            "recurrence": [
+              "Lundi",
+              "Mardi",
+              "Mercredi",
+              "Jeudi",
+              "Vendredi",
+              "Samedi",
+              "Dimanche"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "userAlias": "Effecteur MSP",
+    "login": "qa.servicesas+effecteur-msp@gmail.com",
+    "loginType": "PSC",
+    "roles": "Effecteur",
+    "rpps": "10100160687",
+    "firstName": "Elina",
+    "lastName": "Mary",
+    "sasParticipation": {
+      "type": "via ma MSP",
+      "linkedLocations": [
+        "Msp De Borderouge"
+      ]
+    },
+    "locations": [
+      {
+        "name": "Msp De Borderouge",
+        "type": "MSP",
+        "id": "1",
+        "address": {
+          "street": "53 Avenue Maurice Bourges Maunoury",
+          "postalCode": 31200,
+          "city": "Toulouse"
+        }
+      },
+      {
+        "address": {
+          "street": "61 Avenue de l’Urss",
+          "postalCode": 31400,
+          "city": "Toulouse"
+        },
+        "type": "Lieu d'exercice",
+        "id": 1,
+        "availabilities": [
+          {
+            "day": "J+1",
+            "startTime": "22h00",
+            "endTime": "22h15",
+            "type": "Créneau",
+            "consultationModalities": "Téléconsultation",
+            "recurrence": [
+              "Lundi",
+              "Mardi",
+              "Mercredi",
+              "Jeudi",
+              "Vendredi",
+              "Samedi",
+              "Dimanche"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+  "userAlias": "Effecteur SOS Médecins",
+  "login": "qa.servicesas+effecteur-sos@gmail.com",
+  "loginType": "PSC",
+  "roles": "Effecteur",
+  "rpps": "10100894533",
+  "firstName": "Lisa",
+  "lastName": "Mounier",
+  "sasParticipation": {
+    "type": "via mon association SOS Médecins ou mon association de visites à domicile",
+    "name": "SOS Médecins Pau"
+  },
+  "locations": [
+    {
+      "address": {
+        "street": "51 Avenue de la Côte de Nacre",
+        "postalCode": 14000,
+        "city": "Caen"
+      },
+      "type": "Lieu d'exercice",
+      "id": 1,
+      "availabilities": [
+        {
+          "day": "J+1",
+          "startTime": "22h00",
+          "endTime": "22h15",
+          "type": "Créneau",
+          "consultationModalities": "Téléconsultation",
+          "recurrence": [
+            "Lundi",
+            "Mardi",
+            "Mercredi",
+            "Jeudi",
+            "Vendredi",
+            "Samedi",
+            "Dimanche"
+          ]
+        }
+      ]
+    },
+    {
+      "address": {
+        "street": "206 Boulevard Pereire",
+        "postalCode": 75017,
+        "city": "Paris"
+      },
+      "type": "Lieu d'exercice",
+      "id": 2
+    }
+  ]
+}
+,
+  {
+  "userAlias": "Effecteur LRM 5 lieux",
+  "login": "qa.services+effecteur-lrm5lieux@gmail.com",
+  "loginType": "PSC",
+  "roles": "Effecteur",
+  "rpps": "10101271871",
+  "firstName": "Cécile",
+  "lastName": "Ung",
+  "sasParticipation": {
+    "type": "à titre individuel",
+    "hasEditor": false
+  },
+  "locations": [
+   
+    {
+      "address": {
+        "street": "323 Rue Saint-Martin",
+        "postalCode": 75003,
+        "city": "Paris"
+      },
+      "type": "Lieu d'exercice",
+      "id": 1
+    },
+    {
+      "address": {
+        "street": "151 Avenue Jean Jaurès",
+        "postalCode": 75019,
+        "city": "Paris"
+      },
+      "type": "Lieu d'exercice",
+      "id": 2
+    },
+    {
+      "address": {
+        "street": "73 Rue de Montreuil",
+        "postalCode": 75011,
+        "city": "Paris"
+      },
+      "type": "Lieu d'exercice",
+      "id": 3
+    },
+    {
+      "address": {
+        "street": "12bis Boulevard Jules Favre",
+        "postalCode": 69006,
+        "city": "Lyon"
+      },
+      "type": "Lieu d'exercice",
+      "id": 4
+    },
+    
+    {
+      "address": {
+        "street": "55 Boulevard Richard Lenoir",
+        "postalCode": 75011,
+        "city": "Paris"
+      },
+      "type": "Lieu d'exercice",
+      "id": 5
+    }
+  ]
+},
+
+  {
+    "userAlias": "Effecteur 14 Lieux",
+    "roles": "Effecteur",
+    "login": "",
+    "loginType": "",
+    "firstName": "Jihen",
+    "lastName": "Kourda",
+    "rpps": 810101171154,
+    "locations": [
+      {
+        "type": "Lieu d'exercice",
+        "address": {
+          "street": "110 Rue Gustave Eiffel",
+          "postalCode": "07500",
+          "city": "Guilherand-Granges"
+        }
+      },
+      {
+        "type": "Lieu d'exercice",
+        "address": {
+          "street": "201 Route de Genas",
+          "postalCode": 69100,
+          "city": "Villeurbanne"
+        }
+      },
+      {
+        "type": "Lieu d'exercice",
+        "address": {
+          "street": "31 Avenue Charles de Gaulle",
+          "postalCode": 26200,
+          "city": "Montélimar"
+        }
+      },
+      {
+        "type": "Lieu d'exercice",
+        "address": {
+          "street": "13 Rue Géneral Leclerc",
+          "postalCode": 71100,
+          "city": "Chalon-sur-Saône"
+        }
+      },
+      {
+        "type": "Lieu d'exercice",
+        "address": {
+          "street": "33 Rue Nicolas Bornier",
+          "postalCode": 21000,
+          "city": "Dijon"
+        }
+      },
+      {
+        "type": "Lieu d'exercice",
+        "address": {
+          "street": "13 Rue du Saulce",
+          "postalCode": 89000,
+          "city": "Auxerre"
+        }
+      },
+      {
+        "type": "Lieu d'exercice",
+        "address": {
+          "street": "19 Route de la Luye",
+          "postalCode": "05000",
+          "city": "Gap"
+        }
+      },
+      {
+        "type": "Lieu d'exercice",
+        "address": {
+          "street": "94 Rue de Stalingrad",
+          "postalCode": 38100,
+          "city": "Grenoble"
+        }
+      },
+      {
+        "type": "Lieu d'exercice",
+        "address": {
+          "street": "3 Rue Louis Pasteur",
+          "postalCode": 57200,
+          "city": "Sarreguemines"
+        }
+      },
+      {
+        "type": "Lieu d'exercice",
+        "address": {
+          "street": "3 Rue Aristide Briand",
+          "postalCode": 90000,
+          "city": "Belfort"
+        }
+      },
+      {
+        "type": "Lieu d'exercice",
+        "address": {
+          "street": "21 Rempart Saint-thiébault",
+          "postalCode": 57000,
+          "city": "Metz"
+        }
+      },
+      {
+        "type": "Lieu d'exercice",
+        "address": {
+          "street": "16 Rue Professeur Paul Milleret",
+          "postalCode": 25000,
+          "city": "Besançon"
+        }
+      },
+      {
+        "type": "Lieu d'exercice",
+        "address": {
+          "street": "Rue Professeur Paul Milleret",
+          "postalCode": 25000,
+          "city": "Besançon"
+        }
+      },
+      {
+        "type": "Lieu d'exercice",
+        "address": {
+          "street": "155 Rue Regard",
+          "postalCode": 39000,
+          "city": "Lons-le-Saunier"
+        }
+      }
+    ]
+  },
+  {
+    "userAlias": "Gestionnaire de structure Avec Disponibilités",
+    "login": "qa.servicesas+gestion.struct-avec-dispo@gmail.com",
+    "roles": "Gestionnaire de structure",
+    "firstName": "Gestionnaire de structure Avec Dispo",
+    "lastName": "TNR",
+    "sasParticipation": {
+      "participation": true,
+      "professionalAmount": 4
+    },
+    "locations": [
+      {
+        "name": "Cds Ophtalmologique Ophtavie Toulon Lafayette",
+        "type": "Centre de santé",
+        "id": 1,
+        "address": {
+          "street": "51 Cours Lafayette",
+          "postalCode": 83000,
+          "city": "Toulon"
+        },
+        "availabilities": [
+          {
+            "day": "J+1",
+            "startTime": "00h00",
+            "endTime": "06h00",
+            "type": "Plage",
+            "patientAmount": "6",
+            "consultationModalities": "Téléconsultation",
+            "recurrence": [
+              "Lundi",
+              "Mardi",
+              "Mercredi",
+              "Jeudi",
+              "Vendredi",
+              "Samedi",
+              "Dimanche"
+            ]
+          },
+          {
+            "day": "J+1",
+            "startTime": "06h00",
+            "endTime": "12h00",
+            "type": "Plage",
+            "patientAmount": "6",
+            "consultationModalities": "Téléconsultation",
+            "recurrence": [
+              "Lundi",
+              "Mardi",
+              "Mercredi",
+              "Jeudi",
+              "Vendredi",
+              "Samedi",
+              "Dimanche"
+            ]
+          },
+          {
+            "day": "J+1",
+            "startTime": "12h00",
+            "endTime": "18h00",
+            "type": "Plage",
+            "patientAmount": "6",
+            "consultationModalities": "Téléconsultation",
+            "recurrence": [
+              "Lundi",
+              "Mardi",
+              "Mercredi",
+              "Jeudi",
+              "Vendredi",
+              "Samedi",
+              "Dimanche"
+            ]
+          },
+          {
+            "day": "J+1",
+            "startTime": "18h00",
+            "endTime": "23h59",
+            "type": "Plage",
+            "patientAmount": "6",
+            "consultationModalities": "Téléconsultation",
+            "recurrence": [
+              "Lundi",
+              "Mardi",
+              "Mercredi",
+              "Jeudi",
+              "Vendredi",
+              "Samedi",
+              "Dimanche"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "userAlias": "Gestionnaire de structure Dispo SAS",
+    "login": "qa.servicesas+gestion.struct-dispo-sas@gmail.com",
+    "roles": "Gestionnaire de structure",
+    "firstName": "Gestionnaire de structure Dispo SAS",
+    "lastName": "TNR",
+    "locations": [
+      {
+        "name": "Centre De Sante Dentaire Sainte Marguerite",
+        "type": "Centre de santé",
+        "id": 1,
+        "address": {
+          "street": "92 Boulevard de Sainte Marguerite",
+          "postalCode": 13009,
+          "city": "Marseille"
+        },
+        "availabilities": [
+          {
+            "day": "J+1",
+            "startTime": "22h00",
+            "endTime": "22h15",
+            "type": "Créneau",
+            "consultationModalities": "Téléconsultation",
+            "recurrence": [
+              "Lundi",
+              "Mardi",
+              "Mercredi",
+              "Jeudi",
+              "Vendredi",
+              "Samedi",
+              "Dimanche"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "SOS Médecins Limoges",
+        "type": "Association SOS Médecins",
+        "id": 1,
+        "siret": "41410934800048",
+        "locations": [
+          {
+            "name": "Point fixe de Limoges",
+            "type": "Point fixe de garde",
+            "id": 1,
+            "address": {
+              "street": "44 rue Emile Montégut",
+              "postalCode": 87000,
+              "city": "Limoges"
+            },
+            "availabilities": [
+              {
+                "day": "J+1",
+                "startTime": "09h00",
+                "endTime": "20h00",
+                "type": "Plage",
+                "consultationModalities": "Téléconsultation",
+                "recurrence": [
+                  "Lundi",
+                  "Mardi",
+                  "Mercredi",
+                  "Jeudi",
+                  "Vendredi",
+                  "Samedi",
+                  "Dimanche"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "userAlias": "Gestionnaire structure Indispo",
+    "login": "qa.servicesas+gestion.struct-indisponibilites@gmail.com",
+    "roles": "Gestionnaire de structure",
+    "firstName": "Gestionnaire de structure Indisponibilités",
+    "lastName": "TNR",
+    "locations": [
+      {
+        "name": "Centre De Santé Polyvalent Des Pradettes",
+        "type": "Centre de santé",
+        "id": 1,
+        "address": {
+          "street": "Avenue Arthur Huc",
+          "postalCode": 31100,
+          "city": "Toulouse"
+        },
+        "availabilities": [
+          {
+            "day": "J+1",
+            "startTime": "22h00",
+            "endTime": "22h15",
+            "type": "Créneau",
+            "consultationModalities": "Téléconsultation",
+            "recurrence": [
+              "Lundi",
+              "Mardi",
+              "Mercredi",
+              "Jeudi",
+              "Vendredi",
+              "Samedi",
+              "Dimanche"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Centre De Sante Medical Et Dentaire Toulouse La Terrasse",
+        "type": "Centre de santé",
+        "id": 2,
+        "address": {
+          "street": "41 Chemin de la Terrasse",
+          "postalCode": 31500,
+          "city": "Toulouse"
+        },
+        "availabilities": [
+          {
+            "day": "J+1",
+            "startTime": "22h00",
+            "endTime": "22h15",
+            "type": "Créneau",
+            "consultationModalities": "Téléconsultation",
+            "recurrence": [
+              "Lundi",
+              "Mardi",
+              "Mercredi",
+              "Jeudi",
+              "Vendredi",
+              "Samedi",
+              "Dimanche"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "SOS Médecins Toulouse",
+        "type": "Association SOS Médecins",
+        "id": 1,
+        "siret": 88455181300014,
+        "locations": [
+          {
+            "name": "Point fixe de Toulouse-Jaurès",
+            "type": "Point fixe de garde",
+            "id": 1,
+            "address": {
+              "street": "76 Allées Jean Jaurès",
+              "postalCode": 31000,
+              "city": "Toulouse"
+            },
+            "availabilities": [
+              {
+                "day": "J+1",
+                "startTime": "22h00",
+                "endTime": "22h15",
+                "type": "Créneau",
+                "consultationModalities": "Téléconsultation",
+                "recurrence": [
+                  "Lundi",
+                  "Mardi",
+                  "Mercredi",
+                  "Jeudi",
+                  "Vendredi",
+                  "Samedi",
+                  "Dimanche"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Point fixe de Toulouse-Espagne",
+            "type": "Point fixe de garde",
+            "id": 2,
+            "address": {
+              "street": "24 Route d’Espagne",
+              "postalCode": 31100,
+              "city": "Toulouse"
+            },
+            "availabilities": [
+              {
+                "day": "J+1",
+                "startTime": "22h00",
+                "endTime": "22h15",
+                "type": "Créneau",
+                "consultationModalities": "Téléconsultation",
+                "recurrence": [
+                  "Lundi",
+                  "Mardi",
+                  "Mercredi",
+                  "Jeudi",
+                  "Vendredi",
+                  "Samedi",
+                  "Dimanche"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "userAlias": "Gestionnaire structure Indispo Programmée",
+    "login": "qa.servicesas+gestion.struct-indispo-programmee@gmail.com",
+    "roles": "Gestionnaire de structure",
+    "firstName": "Gestionnaire de structure Indisponibilité programmée",
+    "lastName": "TNR",
+    "locations": [
+      {
+        "name": "Centre Communal De Sante De Loudeac",
+        "type": "Centre de santé",
+        "id": 1,
+        "address": {
+          "street": "9 Rue de la Chesnaie",
+          "postalCode": 22600,
+          "city": "Loudéac"
+        },
+        "availabilities": [
+          {
+            "day": "J+1",
+            "startTime": "22h00",
+            "endTime": "22h15",
+            "type": "Créneau",
+            "consultationModalities": "Téléconsultation",
+            "recurrence": [
+              "Lundi",
+              "Mardi",
+              "Mercredi",
+              "Jeudi",
+              "Vendredi",
+              "Samedi",
+              "Dimanche"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Centre De Sante Tregueux Saint-Brieuc",
+        "type": "Centre de santé",
+        "address": {
+          "street": "Rue Jean Grenier",
+          "postalCode": 22000,
+          "city": "Saint-Brieuc"
+        },
+        "id": 2,
+        "availabilities": [
+          {
+            "day": "J+1",
+            "startTime": "22h00",
+            "endTime": "22h15",
+            "type": "Créneau",
+            "consultationModalities": "Téléconsultation",
+            "recurrence": [
+              "Lundi",
+              "Mardi",
+              "Mercredi",
+              "Jeudi",
+              "Vendredi",
+              "Samedi",
+              "Dimanche"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Centre Dentaire De Guingamp",
+        "type": "Centre de santé",
+        "address": {
+          "street": "Rue du Marechal Foch",
+          "postalCode": 22200,
+          "city": "Guingamp"
+        },
+        "id": 3,
+        "availabilities": [
+          {
+            "day": "J+1",
+            "startTime": "22h00",
+            "endTime": "22h15",
+            "type": "Créneau",
+            "consultationModalities": "Téléconsultation",
+            "recurrence": [
+              "Lundi",
+              "Mardi",
+              "Mercredi",
+              "Jeudi",
+              "Vendredi",
+              "Samedi",
+              "Dimanche"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "SOS Médecins Quimper",
+        "type": "Association SOS Médecins",
+        "id": 1,
+        "locations": [
+          {
+            "name": "Point fixe de Quimper",
+            "type": "Point fixe de garde",
+            "address": {
+              "street": "143 Avenue de Keradennec",
+              "postalCode": 29000,
+              "city": "Quimper"
+            },
+            "id": 1,
+            "availabilities": [
+              {
+                "day": "J+1",
+                "startTime": "22h00",
+                "endTime": "22h15",
+                "type": "Créneau",
+                "consultationModalities": "Téléconsultation",
+                "recurrence": [
+                  "Lundi",
+                  "Mardi",
+                  "Mercredi",
+                  "Jeudi",
+                  "Vendredi",
+                  "Samedi",
+                  "Dimanche"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "SOS Médecins Brest",
+        "type": "Association SOS Médecins",
+        "id": 2,
+        "siret": "92094402200010",
+        "locations": [
+          {
+            "name": "Point fixe de Brest",
+            "type": "Point fixe de garde",
+            "id": 1,
+            "address": {
+              "street": "252 rue Francis Thomas",
+              "postalCode": 29200,
+              "city": "Brest"
+            },
+            "availabilities": [
+              {
+                "day": "J+1",
+                "startTime": "22h00",
+                "endTime": "22h15",
+                "type": "Créneau",
+                "consultationModalities": "Téléconsultation",
+                "recurrence": [
+                  "Lundi",
+                  "Mardi",
+                  "Mercredi",
+                  "Jeudi",
+                  "Vendredi",
+                  "Samedi",
+                  "Dimanche"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "SOS Médecins Pays de Vannes",
+        "type": "Association SOS Médecins",
+        "id": 3,
+        "siret": 53342131900013,
+        "locations": [
+          {
+            "name": "Point fixe de Vannes",
+            "type": "Point fixe de garde",
+            "id": 1,
+            "address": {
+              "street": "11 Rue du Docteur Joseph Audic",
+              "postalCode": 56000,
+              "city": "Vannes"
+            },
+            "availabilities": [
+              {
+                "day": "J+1",
+                "startTime": "22h00",
+                "endTime": "22h15",
+                "type": "Créneau",
+                "consultationModalities": "Téléconsultation",
+                "recurrence": [
+                  "Lundi",
+                  "Mardi",
+                  "Mercredi",
+                  "Jeudi",
+                  "Vendredi",
+                  "Samedi",
+                  "Dimanche"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "userAlias": "Gestionnaire de structure CDS",
+    "login": "qa.servicesas+gestion.struct-cds@gmail.com",
+    "roles": "Gestionnaire de structure",
+    "firstName": "Gestionnaire de structure CDS",
+    "lastName": "TNR",
+    "locations": [
+      {
+        "name": "Centre De Santé Dentaire De Lille",
+        "type": "Centre de santé",
+        "address": {
+          "street": "96 Rue Nationale",
+          "postalCode": 59800,
+          "city": "Lille"
+        },
+        "id": 1,
+        "availabilities": [
+          {
+            "day": "J+1",
+            "startTime": "22h00",
+            "endTime": "22h15",
+            "type": "Créneau",
+            "consultationModalities": "Téléconsultation",
+            "recurrence": [
+              "Lundi",
+              "Mardi",
+              "Mercredi",
+              "Jeudi",
+              "Vendredi",
+              "Samedi",
+              "Dimanche"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "userAlias": "Gestionnaire de structure SOS",
+    "login": "qa.servicesas+gestion.struct-sos@gmail.com",
+    "roles": "Gestionnaire de structure",
+    "firstName": "Gestionnaire de structure SOS",
+    "lastName": "TNR",
+    "locations": [
+      {
+        "name": "SOS Médecins Pau",
+        "type": "Association SOS Médecins",
+        "id": 1,
+        "siret": 42187439700035,
+        "locations": [
+          {
+            "name": "Point fixe de Pau",
+            "type": "Point fixe de garde",
+            "id": 1,
+            "address": {
+              "street": "3bis rue Suzanne Lenglen",
+              "postalCode": 64000,
+              "city": "Pau"
+            },
+            "availabilities": [
+              {
+                "day": "J+1",
+                "startTime": "22h00",
+                "endTime": "22h15",
+                "type": "Créneau",
+                "consultationModalities": "Téléconsultation",
+                "recurrence": [
+                  "Lundi",
+                  "Mardi",
+                  "Mercredi",
+                  "Jeudi",
+                  "Vendredi",
+                  "Samedi",
+                  "Dimanche"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "userAlias": "Gestionnaire de structure CPTS",
+    "login": "qa.servicesas+gestion.struct-cpts@gmail.com",
+    "roles": "Gestionnaire de structure",
+    "firstName": "Gestionnaire de structure CPTS",
+    "lastName": "TNR",
+    "locations": [
+      {
+        "name": "Cpts nord 74",
+        "type": "CPTS",
+        "id": 1,
+        "address": {
+          "street": "253 Route de thonon",
+          "postalCode": 74380,
+          "city": "Cranves-Sales"
+        }
+      }
+    ]
+  }
+]

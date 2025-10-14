@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Test_FRS_PEDIATRIE_Pediatrie",
+    "__description__": "Permet de tester le retour si une seule spécialité est demandée",
+    "types": [ "Pédiatre"],
+    "specialites": ["Pédiatrie"]
+  },
+  {
+    "name": "Test_FRS_PEDIATRIE_Allergologie",
+    "__description__": "permet de tester le retour si 2 spécialités sont demandées, sans utiliser Médine générale",
+    "types": [ "Pédiatre"],
+    "specialites": ["Pédiatrie", "Allergologie"]
+  },
+  {
+    "name": "Test_FRS_MédecineDuSport",
+    "__description__" : "Pour vérifier que les PS participant au SAS peuvent avoir des spécialités additionnelles par rapport au filtre",
+    "types": [ "Médecin généraliste"],
+    "specialities": [ "Médecine du sport"]
+  },
+  {
+    "name": "Test_FRS_STRUCTURES",
+    "description": "Limité à SOS Médecins et Centres de santé de tous les référentiels",
+    "__description1__": "ATTENTION : ajouter CPTS dans le champ types n'a aucun impact actuellement : la CPTS sera renvoyée systématiquement si un PS de la CPTS est renvoyé",
+    "__description2__": "Ce point va probablement évoluer : voir SAS-7827 et autres non encore définis",
+    "types": [
+      "SOS Médecins", "Maison de Santé Pluriprofessionnelle", "Maison de santé (L6223-3)"
+    ],
+    "specialities": [
+      "Kinésithérapie", "Vaccin Covid"
+    ]
+  }
+]

@@ -1,0 +1,16 @@
+
+# CYPRESS
+# Dependencies
+/node_modules
+# Local variables
+cypress.env.json
+# Logs & reports
+cypress/downloads
+cypress/screenshots
+cypress/videos
+cypress/logs
+cypress/reports
+
+# IDE
+/.vscode
+/.idea

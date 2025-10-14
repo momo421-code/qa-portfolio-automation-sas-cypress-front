@@ -1,0 +1,222 @@
+################################################################################
+# Gitlab CI integration
+################################################################################
+
+################################################################################
+# Default
+################################################################################
+default:
+  interruptible: true
+  retry:
+    max: 2
+    when:
+      - unknown_failure
+      - api_failure
+      - stuck_or_timeout_failure
+      - runner_system_failure
+      - scheduler_failure
+  tags:
+    - rui
+
+################################################################################
+# Stages - Order is important for dependencies!
+################################################################################
+stages:
+  - build
+  - test
+  - recette
+  - integration
+  - preproduction
+  - production
+
+################################################################################
+# Variables
+################################################################################
+variables:
+  CI_DEBUG_TRACE: $CI_KLEE_DEBUG_TRACE
+  SECRET_DETECTION_HISTORIC_SCAN: $CI_KLEE_SECRET_DETECTION_HISTORIC_SCAN
+
+################################################################################
+# Workflow & Rules
+################################################################################
+workflow:
+  name: '$PROJECT_PIPELINE_NAME'
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "push"
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - if: $CI_PIPELINE_SOURCE == "external"
+    - if: $CI_PIPELINE_SOURCE == "trigger"
+    - if: $CI_PIPELINE_SOURCE == "pipeline"
+
+.main: &main
+  - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH && $UPSTREAM_BRANCH
+    when: never
+  - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH && $CI_PIPELINE_SOURCE != "schedule"
+
+.schedule_integration: &schedule_integration
+  - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH && $CI_PIPELINE_SOURCE == "schedule" && $SCHEDULER == "integration"
+    variables:
+      PROJECT_PIPELINE_NAME: 'Pipeline Schedule: Integration'
+
+.schedule_preproduction: &schedule_preproduction
+  - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH && $CI_PIPELINE_SOURCE == "schedule" && $SCHEDULER == "preproduction"
+    variables:
+      PROJECT_PIPELINE_NAME: 'Pipeline Schedule: Preproduction'
+
+.schedule_production: &schedule_production
+  - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH && $CI_PIPELINE_SOURCE == "schedule" && $SCHEDULER == "production"
+    variables:
+      PROJECT_PIPELINE_NAME: 'Pipeline Schedule: Production'
+
+.develop: &develop
+  - if: $CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH && $CI_PIPELINE_SOURCE != "schedule"
+    variables:
+      PROJECT_PIPELINE_NAME: 'Pipeline for branch: $CI_COMMIT_BRANCH'
+
+.upstream_develop: &upstream_develop
+  - if: $UPSTREAM_BRANCH == "develop"
+    variables:
+      PROJECT_PIPELINE_NAME: 'Pipeline Schedule from Drupal: RUI'
+
+.build_rules: &build_rules
+  - if: $UPSTREAM_BRANCH == "develop"
+  - if: $CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH && $CI_PIPELINE_SOURCE != "schedule"
+  - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH && $CI_PIPELINE_SOURCE != "schedule"
+  - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH && $CI_PIPELINE_SOURCE == "schedule" && $SCHEDULER == "integration"
+  - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH && $CI_PIPELINE_SOURCE == "schedule" && $SCHEDULER == "preproduction"
+  - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH && $CI_PIPELINE_SOURCE == "schedule" && $SCHEDULER == "production"
+
+################################################################################
+# Include
+################################################################################
+include:
+  - template: Security/Secret-Detection.gitlab-ci.yml # Security - Gitlab - Secret Detection
+  - template: Security/SAST.gitlab-ci.yml # Security - Gitlab - SAST
+
+  # Component Node
+  - component: $CI_SERVER_FQDN/components/node/gitlab-ci-node@~latest
+    inputs:
+      node-image: $CI_KLEE_IMAGE_NODE22
+      node-stage-lint: test
+      node-stage-audit: test
+      node-manager: npm
+      node-cache-paths:
+        - node_modules
+        - cache/Cypress
+      node-install-extra-opts: --frozen-lockfile
+      node-build-enabled: false
+      node-build-artifacts-paths:
+        - cypress
+        - cypress.config.ts
+        - tsconfig.json
+        - package.json
+      node-lint-args: run lint:ci
+      node-rules-build: *build_rules
+      node-rules-lint: *build_rules
+      node-rules-audit: *build_rules
+      node-audit-allow-failure: true
+
+  # cy-cucumber component.
+  # RUI - manual - firefox
+  - component: $CI_SERVER_FQDN/components/cypress/cy-cucumber@~latest
+    inputs:
+      job-stage: recette
+      job-when: manual
+      job-environment: rui1
+      job-rules: *develop
+      cypress-env-file: ${CYPRESS_ENV_HTACCESS}
+      cypress-browser: firefox
+
+  # RUI - manual - chrome
+  - component: $CI_SERVER_FQDN/components/cypress/cy-cucumber@~latest
+    inputs:
+      job-stage: recette
+      job-when: manual
+      job-environment: rui1
+      job-rules: *develop
+      cypress-env-file: ${CYPRESS_ENV_HTACCESS}
+      cypress-browser: chrome
+
+  # CI-AUTO - RUI - manual - firefox
+  - component: $CI_SERVER_FQDN/components/cypress/cy-cucumber@~latest
+    inputs:
+      job-stage: recette
+      job-when: manual
+      job-environment: rui1
+      job-rules: *upstream_develop
+      cypress-env-file: ${CYPRESS_ENV_HTACCESS}
+      cypress-browser: firefox
+      cucumber-tag: "@smoke_test"
+
+  # CI-AUTO - RUI - auto - chrome
+  - component: $CI_SERVER_FQDN/components/cypress/cy-cucumber@~latest
+    inputs:
+      job-stage: recette
+      job-when: manual
+      job-environment: rui1
+      job-rules: *upstream_develop
+      cypress-env-file: ${CYPRESS_ENV_HTACCESS}
+      cypress-browser: chrome
+      cucumber-tag: "@smoke_test"
+
+  # INT - manual - firefox
+  - component: $CI_SERVER_FQDN/components/cypress/cy-cucumber@~latest
+    inputs:
+      job-stage: integration
+      job-when: manual
+      job-environment: int
+      job-rules: *schedule_integration
+      cypress-env-file: ${CYPRESS_ENV_HTACCESS}
+      cypress-browser: firefox
+
+  # INT - manual - chrome
+  - component: $CI_SERVER_FQDN/components/cypress/cy-cucumber@~latest
+    inputs:
+      job-stage: integration
+      job-when: manual
+      job-environment: int
+      job-rules: *schedule_integration
+      cypress-env-file: ${CYPRESS_ENV_HTACCESS}
+      cypress-browser: chrome
+
+  # PREPROD - manual - firefox
+  - component: $CI_SERVER_FQDN/components/cypress/cy-cucumber@~latest
+    inputs:
+      job-stage: preproduction
+      job-when: manual
+      job-environment: preprod
+      job-rules: *schedule_preproduction
+      cypress-env-file: ${CYPRESS_ENV_HTACCESS}
+      cypress-browser: firefox
+
+  # PREPROD - manual - chrome
+  - component: $CI_SERVER_FQDN/components/cypress/cy-cucumber@~latest
+    inputs:
+      job-stage: preproduction
+      job-when: manual
+      job-environment: preprod
+      job-rules: *schedule_preproduction
+      cypress-env-file: ${CYPRESS_ENV_HTACCESS}
+      cypress-browser: chrome
+
+  # PROD - manual - firefox
+  - component: $CI_SERVER_FQDN/components/cypress/cy-cucumber@~latest
+    inputs:
+      job-stage: production
+      job-when: manual
+      job-environment: prod
+      job-rules: *schedule_production
+      cypress-env-file: ${CYPRESS_ENV}
+      cypress-browser: firefox
+      cucumber-tag: "@prod"
+
+  # PROD - manual - chrome
+  - component: $CI_SERVER_FQDN/components/cypress/cy-cucumber@~latest
+    inputs:
+      job-stage: production
+      job-when: manual
+      job-environment: prod
+      job-rules: *schedule_production
+      cypress-env-file: ${CYPRESS_ENV}
+      cypress-browser: chrome
+      cucumber-tag: "@prod"
