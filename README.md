@@ -1,42 +1,83 @@
-# sas_tests_auto
+# 🧪 SAS Tests Auto – Automatisation Cypress / TypeScript / Cucumber
 
-Tests fonctionnels de l'application web SAS, automatisés avec Cypress en Typescript.
+Tests fonctionnels automatisés de l’application web **SAS (Service d’Accès aux Soins)**.  
+Ce projet a pour objectif d’assurer la **non-régression**, la **qualité fonctionnelle** et la **traçabilité** des tests à travers **Cypress**, **Cucumber**, et l’intégration **Xray / Jira**.
 
-## Installation
+---
 
-### Installation des dépendances
+## 🚀 Objectifs du projet
 
-```shell
+- Automatiser les **tests fonctionnels end-to-end (E2E)** de l’application SAS.
+- Centraliser la gestion des **scénarios Gherkin** (BDD) et leur exécution via Cypress.
+- Intégrer les campagnes de tests dans **GitLab CI/CD** et **Xray**.
+- Garantir la **qualité du code** via ESLint + Prettier.
+- Séparer les **données sensibles** et les **configurations d’environnement**.
+
+---
+
+## 🧱 Stack technique
+
+| Domaine | Technologie |
+|----------|-------------|
+| Framework de test | [Cypress](https://www.cypress.io/) |
+| Langage | TypeScript |
+| BDD / Gherkin | [Cucumber](https://cucumber.io/) |
+| Préprocesseurs | @badeball/cypress-cucumber-preprocessor, @bahmutov/cypress-esbuild-preprocessor |
+| Linter / Formateur | ESLint + Prettier |
+| CI/CD | GitLab Pipelines |
+| Gestion des tests | Jira / Xray |
+| Pattern | Page Object Model (POM) |
+| Données | Fixtures JSON par environnement |
+
+---
+
+## 📂 Structure du projet
+
+sas_tests_auto/
+├─ cypress/
+│ ├─ configs/ # Configurations par environnement (int, preprod, prod...)
+│ ├─ e2e/
+│ │ ├─ features/ # Scénarios Gherkin (.feature)
+│ │ ├─ stepDefinitions/ # Implémentation des steps (Cucumber)
+│ │ ├─ pages/ # Page Object Model (POM)
+│ │ └─ hooks.ts # Hooks globaux pour Cypress (before/after)
+│ ├─ fixtures/ # Jeux de données (par environnement)
+│ ├─ support/ # Commandes et utilitaires Cypress
+│ └─ reports/ # Rapports HTML (Cucumber report)
+├─ cypress.config.ts # Configuration principale Cypress
+├─ package.json # Scripts & dépendances
+├─ eslint.config.mjs # Linter configuration
+└─ tsconfig.json # Typage TypeScript
+
+yaml
+Copier le code
+
+---
+
+## ⚙️ Installation
+
+### 1️⃣ Installation des dépendances
+
+```bash
 npm install
-```
+2️⃣ Variables sensibles
+Les mots de passe et identifiants ne sont jamais stockés en dur.
+Ils sont gérés dans les environnements Cypress.
 
-### Données sensibles
-
-Les données sensibles ne sont pas informées en dur dans le projet dans un souci de sécurité :
-
-- password : Mot de passe de l'ensemble des comptes utilisateurs TNR
-- basic_auth : HTAccess des environnements hors prod
-
-Elles sont renseignées dans le `env` du fichier `cypress.config.ts` sans valeur définie.
-
-```typescript
+Exemple cypress.config.ts
+ts
+Copier le code
 export default defineConfig({
-    e2e: ({
-        // ...
-        env: {
-            basic_auth: {username: '', password: ''},
-            password: ""
-        }
-    })
+  e2e: {
+    env: {
+      basic_auth: { username: '', password: '' },
+      password: ''
+    }
+  }
 })
-```
-
-#### En local
-
-Créer un fichier `cypress.env.json` à la racine du projet pour surcharger les variables d'environnements Cypress.
-S'appuyer sur le code suivant en remplaçant les valeurs 'secret' par celles attendues.
-
-```json
+Exemple cypress.env.json (local)
+json
+Copier le code
 {
   "basic_auth": {
     "username": "secret",
@@ -44,158 +85,160 @@ S'appuyer sur le code suivant en remplaçant les valeurs 'secret' par celles att
   },
   "password": "secret"
 }
-```
-
-## Tests sur les différents environnements
-
-Pour lancer les tests sur un nouvel environnement,
-il faut dupliquer un fichier `cypress/configs/cypress.[env].config.ts`,
-le renommer `cypress/configs/cypress.[new-env].config.ts` en remplaçant `[new-env]` par le nom du nouvel environnement
-et de modifier les données liées à celui-ci.
-
-### Ouverture de l'application Cypress
-
-Pour ouvrir l'application de test Cypress avec les données d'un environnement en particulier, lancer l'une des commandes
-suivantes :
-
-- `npm run open:rui1`
-- `npm run open:int`
-- `npm run open:preprod`
-- `npm run open:prod`
-
-### Lancement des tests
-
-Pour lancer les tests sur un environnement en particulier, lancer l'une des commandes
-suivantes :
-
-- `npm run test:rui1`
-- `npm run test:int`
-- `npm run test:preprod`
-- `npm run test:prod`
-
-## Jeux de données
-
-Les jeux de données peuvent être définis pour fonctionner seulement sur certains environnements.
-
-Par exemple : `cypress/fixtures/accounts/accounts-prod.json` est fait pour l'environnement de Production,
-contrairement à `cypress/fixtures/accounts/accounts.json` qui est pour le reste des environnements.
-
-La donnée d'environnement `environnement` permet de sélectionner le fichier correspondant
-`cypress/configs/cypress.[env].config.ts`.
-Chacun de ces fichiers contient une variable `fixtureFile` indiquant quel est le nom du fichier fixture
-attaché à cet environnement.
-
-Pour utiliser les jeux de données, il est **nécessaire** de demander le chargement des données
-dans la méthode ```before()``` des fichiers steps. Un appel `before()` est mutualisé dans `stepDefinitions/hooks.ts`.
-Ce module commun est chargé par `e2e.ts`.
-
-hooks.ts :
-
-```typescript
-before(() => {
-    accountFixtureUtils.loadData();
-})
-```
-
-## Cucumber
-
-Les cas de tests sont écrits en Gherkin et sont trouvables sous forme de .feature dans le
-dossier `cypress/e2e/features`.
-
-Les méthodes associées aux pas de tests via Cucumber, sont trouvables dans le dossier `cypress/e2e/stepDefinitions`.
-
-### Mise en place de Cucumber pour Cypress
-
-Les dépendances `@badeball/cypress-cucumber-preprocessor` & `@bahmutov/cypress-esbuild-preprocessor` ont été importées
-et ajoutées dans la fonction `setupNodeEvents()` du fichier `Cypress.config.ts`, afin de faire fonctionner Cucumber avec
-Cypress.
-
-Ajout des configurations dans le fichier `tsconfig.json` :
-
-- `module: Node16` – Permet au module `@badeball/cypress-cucumber-preprocessor/esbuild` d'être reconnu
-- `esModuleInterop: true` – Permet à `cypress_esbuild_preprocessor_1.default` d'être reconnu comme une fonction
-
-### Paramétrages de Cucumber
-
-- Le chemin et le type des fichiers de test sont définis par le paramètre `specPattern` du fichier `Cypress.config.ts`
-- Le chemin des définitions de pas de test est défini par le paramètre `cypress-cucumber-preprocessor.stepDefinitions`
-  du fichier `package.json`
-- Les tests sont filtrables par tags grâce au paramètre `cypress-cucumber-preprocessor.filterSpecs` du
-  fichier `package.json`
-- Les tests ayant été mis de côté par le filtrage sont absents du lancement grâce au
-  paramètre `cypress-cucumber-preprocessor.omitFiltered` du fichier `package.json`
-- Le rapport de test en HTML est défini par le paramètre `cypress-cucumber-preprocessor.html` du fichier `package.json`
-
-## Tags
-
-Les tests peuvent être lancés en fonction de tags Cucumber.
-
-### Placement des tags sur un test en Gherkin
-
-Les tags peuvent être placés au-dessus de divers éléments d'un test en Gherkin.
-
-- `Feature`
-- `Scenario`
-- `Scenario Outline`
-- `Examples`
+🌍 Exécution des tests
+🔓 Ouvrir Cypress (mode interface)
+bash
+Copier le code
+npm run open:int
+npm run open:preprod
+npm run open:prod
+⚡ Exécuter les tests en mode headless
+bash
+Copier le code
+npm run test:int
+npm run test:preprod
+npm run test:prod
+🧩 Gestion des environnements
+Chaque environnement dispose de sa propre configuration :
+cypress/configs/cypress.[env].config.ts
 
 Exemple :
 
-```gherkin
-@smoke_test @fast
-Feature: Connexion utilisateur
-  En tant qu'utilisateur du SAS
-  Je veux pouvoir me connecter
-  Afin de pouvoir accéder aux fonctionnalités liées à mon rôle
+ts
+Copier le code
+export default defineConfig({
+  env: {
+    name: 'preprod',
+    baseUrl: 'https://sas-preprod.sante.fr',
+    fixtureFile: 'accounts-preprod.json'
+  }
+})
+🧠 Jeux de données (Fixtures)
+Les jeux de données sont contextualisés par environnement.
+Exemples :
 
-  @connexion
-  Scenario Outline: Déconnexion de l'utilisateur
-    Given un utilisateur sur la page d'accueil
-    When il se connecte en tant que "<account>"
+pgsql
+Copier le code
+cypress/fixtures/accounts/accounts.json        → Intégration
+cypress/fixtures/accounts/accounts-preprod.json → Préproduction
+cypress/fixtures/accounts/accounts-prod.json    → Production
+Les données sont chargées automatiquement via un hook global :
+
+ts
+Copier le code
+// hooks.ts
+before(() => {
+  accountFixtureUtils.loadData();
+});
+💬 Cucumber (BDD)
+📄 Organisation
+Les features (.feature) décrivent les comportements utilisateur.
+
+Les stepsDefinitions implémentent les étapes techniques.
+
+Les pages contiennent les actions utilisateur (POM).
+
+⚙️ Configuration Cucumber
+Ajoutée dans setupNodeEvents() du cypress.config.ts, avec support esbuild et TypeScript.
+
+Exemple :
+ts
+Copier le code
+import { addCucumberPreprocessorPlugin } from '@badeball/cypress-cucumber-preprocessor'
+import createEsbuildPlugin from '@bahmutov/cypress-esbuild-preprocessor'
+
+export default defineConfig({
+  e2e: {
+    async setupNodeEvents(on, config) {
+      await addCucumberPreprocessorPlugin(on, config)
+      on('file:preprocessor', createEsbuildPlugin(config))
+      return config
+    }
+  }
+})
+🏷️ Tags Cucumber
+Les scénarios peuvent être filtrés via des tags :
+
+Tag	Description
+@prod	Scénario valable en production
+@int	Scénario valable en intégration
+@preprod	Scénario valable en préproduction
+@only	Exécute uniquement les scénarios tagués
+@skip	Ignore les scénarios tagués
+@smoke_test	Campagne de tests rapides
+@connexion	Tests liés à l’authentification
+
+Exemple :
+gherkin
+Copier le code
+@smoke_test @connexion
+Feature: Connexion utilisateur
+
+  Scenario: Déconnexion de l’utilisateur
+    Given un utilisateur sur la page d’accueil
+    When il se connecte en tant que "Régulateur OSNP"
     And il se déconnecte
     Then il est déconnecté
-    @prod
-    Examples:
-      | account         |
-      | Régulateur OSNP |
+🧹 Linter et formatage du code
+Le projet utilise ESLint (TypeScript) + Prettier pour assurer la qualité du code.
 
-    Examples:
-      | account                 |
-      | Administrateur national |
+▶️ Exécuter le linter
+bash
+Copier le code
+npm run lint
+📁 Configuration
+Fichier : eslint.config.mjs
 
-```
+Plugins utilisés :
 
-### Tags spéciaux
+typescript-eslint
 
-Il est possible de rajouter des tags intéressants pour le test en local :
+eslint-plugin-cypress
 
-- `@only` - Seuls les scénarios étiquetés avec ce tag seront pris en compte lors du lancement de la fonctionnalité
-- `@skip` - Les scénarios étiquetés avec ce tag ne seront pas pris en compte lors du lancement de la fonctionnalité
+eslint-plugin-prettier
 
-## Linter
+📊 CI/CD – Intégration continue GitLab
+Pipeline typique :
 
-Ce projet utilise ESLint Typescript comme linter afin de maintenir la qualité et la
-cohérence du code.
-Prettier est également utilisé pour le formatage du code.
+yaml
+Copier le code
+stages:
+  - install
+  - lint
+  - test
+  - report
 
-### Utilisation du Linter
+install:
+  stage: install
+  script:
+    - npm ci
 
-Pour exécuter le linter, la commande suivante peut-être lancée.
-Cela fera une vérification du code, fixera ce qui peut l'être et stylisera celui-ci.
+lint:
+  stage: lint
+  script:
+    - npm run lint
 
-`npm run lint`
+e2e_tests:
+  stage: test
+  script:
+    - npm run test:preprod
+  artifacts:
+    paths:
+      - cypress/reports/
+Les rapports HTML sont générés en fin de pipeline :
+📁 cypress/reports/cucumber-report.html
 
-### Configuration du Linter
+📈 Intégration Xray / Jira
+Chaque feature Cucumber est synchronisée avec un Test Case Xray dans Jira,
+permettant le suivi des exécutions, anomalies et TNR.
 
-La configuration du linter se trouve dans le fichier `eslint.config.mjs` à la racine du projet.
-Il est possible d'ajouter des règles supplémentaires ou modifier celles existantes selon les besoins du projet.
+💬 Auteur
+👤 Mohamed Touaoua
+QA Automatisation – Cypress / TypeScript / Cucumber
+Klee Group – Projet Santé France (SAS)
+📅 Création : Février 2024
 
-### Plugins du Linter
+🏷️ Tags
+Cypress · TypeScript · Cucumber · BDD · Xray · Jira · ESLint · Prettier · CI/CD · TNR · PageObjectModel
 
-Plusieurs plugins ESLint ont été ajoutés pour aider à appliquer les meilleures pratiques et éviter les erreurs
-courantes :
-
-- `typescript-eslint` Permet d’utiliser des règles ESLint spécifiques à TypeScript.
-- `eslint-plugin-cypress` Ajoute des règles spécifiques à Cypress pour les tests end-to-end.
-- `eslint-plugin-prettier` Permet d’utiliser Prettier comme une règle ESLint et de signaler les erreurs de formatage
-  comme des erreurs ESLint.
+Ce projet illustre mes compétences en automatisation QA avec Cypress, la mise en place d’une architecture POM + Cucumber, et l’intégration dans un écosystème CI/CD complet.
